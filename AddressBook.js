@@ -102,9 +102,18 @@ class AddressBook{
        let firstName = prompt(`Enter first name for deleting contact!`);
        array.forEach(AddressBook => {
            if(contactList.getFirstName == firstName){
-               contactList.pop(firstName);
+               contactList.splice(firstName,1);
            } else console.log("First name not found!");
        });
+   }
+
+   countNumberOfContacts(){
+       console.log("Number of people in contact list are: ");
+       let number = contactList.reduce((number) =>{
+           number+=1;
+           return number;
+       });
+       console("Number of people in contact list are: "+number);
    }
     get getFirstName() { 
         return this.firstName; 
