@@ -242,4 +242,11 @@ class AddressBook{
     }
     countByState(state) {
         return contactList.filter(addressBook  => addressBook .state == state).reduce((count,addressBook)=> count +=1, 0);
+    }   
+
+    sortByName(){
+        contactList.sort((a, b) => a.firstName.toLowerCase().localeCompare(b.firstName.toLowerCase()));
+        console.log("sorted Array:");
+        contactList.forEach(AddressBook => console.log("Sort By Name:\n"+AddressBook.toString()));
+    }
 }
