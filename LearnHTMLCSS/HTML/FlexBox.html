@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <title>CodePen-Demo Flexbox</title>
+            <style>
+             body {
+            padding: 2em;
+        }
+
+        .headerContainer {
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            background: tomato;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .footerContainer {
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+            background: lightgreen;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .mainContainer {
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .mainContentItem {
+            text-align: left;
+            background: deepskyblue;
+        }
+
+        .sidebarLeftItem {
+            background: gold;
+        }
+
+        .sidebarRightItem {
+            background: hotpink;
+
+        }
+
+        article {
+            padding: 10px;
+            margin: 10px;
+            background: aqua;
+        }
+
+        .sidebarItem {
+            flex: 1 0 0;
+            border: 0px solid green;
+        }
+
+        .mainContentItem {
+            flex: 3 0px
+        }
+
+        .sidebarLeftItem {
+            order: 1;
+        }
+
+        .mainContentItem {
+            order: 2;
+        }
+
+        .sidebarRightItem {
+            order: 3;
+        }
+
+            </style>
+    </head>
+    <body>
+        <header class="headerContainer"> <h1> Sample - Flexbox Example</h1></header>
+        <div class="mainContainer">
+            <section class="mainContentItem"></section>
+                <article>
+                    <h2>First article</h2>
+                    <p>Tacos acutally i don't know!</p>
+                </article>
+            <sideBar class="sideBarItem sidebarLeftItem"> <div class="centre"><p> This is my left side bar</p></div></sideBar>
+            <sideBar class="sidebarItem sidebarRightItem"><div class="centre"> <p> This is my right side bar</p></div></sideBar>
+        </div>
+        <footer class="footerContainer">Footer</footer>
+    </body>
+</html>
