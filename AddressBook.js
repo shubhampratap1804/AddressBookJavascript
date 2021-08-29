@@ -226,4 +226,14 @@ class AddressBook{
         contactList.filter(addressBook => addressBook.state == state)
         contactList.forEach(addressBook => console.log(contactList));
     }
+
+    viewByCityOrState(){
+        let city = prompt(`Enter city by which you want to view: `);
+        let state = prompt(`Enter state by which you want to view: `);
+        contactList.array.forEach(addressBook => {
+            if(addressBook.getCity() == city && addressBook.getState() == state){
+                contactList.forEach(addressBook=> console.log(contactList));
+            }
+        });
+    }
 }
