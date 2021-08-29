@@ -97,6 +97,15 @@ class AddressBook{
             } else console.log("First name not found!");
         });
    }
+
+   deleteContact(){
+       let firstName = prompt(`Enter first name for deleting contact!`);
+       array.forEach(AddressBook => {
+           if(contactList.getFirstName == firstName){
+               contactList.pop(firstName);
+           } else console.log("First name not found!");
+       });
+   }
     get getFirstName() { 
         return this.firstName; 
     }
