@@ -1,5 +1,6 @@
 console.log("Welcome to address book using javascrip");
 const prompt = require("prompt-sync");
+let contactList = new Array(AddressBook);
 class AddressBook{
     firstName;
     lastName;
@@ -40,12 +41,61 @@ class AddressBook{
        this.setEmail(email);
 
        let addressBook = new AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email);
-       console.log(addressBook.toString());
+       contactList.push(addressBook);
+       console.log(contactList);
    }
 
    addNewAddressBook(){
        let newAddressBook = new AddressBook();
        newAddressBook.addContacts();
+   }
+
+   editContacts(){
+        let firstName = prompt(`Enter first name of the existing contact`);
+        array.forEach(AddressBook => {
+            if(contactList.getFirstName() == firstName){
+                console.log("First name found, What you want to edit? ");
+                console.log("Enter 1 to edit first name: "+"\n Enter 2 to edit last name: "+"\n Enter 3 to edit address: "+
+                "\n Enter 4 to edit city name: "+"\n Enter 5 to edit state name: "+"\n Enter 6 to edit zip code: "+
+                "\n Enter 7 to edit phone number: "+"\n Enter 8 to edit email id: ");
+
+                let optionSelected = prompt(`Enter your choice: `);
+                switch(optionSelected){
+                    case 1:
+                        let firstName = prompt(`Enter new first name: `);
+                        this.setFirstName(firstName);
+                        break;
+                    case 2:
+                        let lastName = prompt(`Enter new last name: `);
+                        this.setLastName(lastName);
+                        break;
+                    case 3:
+                        let address = prompt(`"Enter new address: `);
+                        this.setAddress(address);
+                        break;
+                    case 4:
+                        let city = prompt(`Enter new city: `);
+                        this.setCity(city);
+                        break;
+                    case 5:
+                        let state = prompt(`Enter new state: `);
+                        this.setState(state);
+                        break;
+                    case 6:
+                        let zip = prompt(`Enter new zip code: `);
+                        this.setZip(zip);
+                        break;
+                    case 7:
+                        let phoneNumber = prompt(`Enter new phone number: `);
+                        this.setPhoneNumber(phoneNumber);
+                        break;
+                    case 8:
+                        let email = prompt(`Enter new email address: `);
+                        this.setEmail(email);
+                        break;                     
+                }
+            } else console.log("First name not found!");
+        });
    }
     get getFirstName() { 
         return this.firstName; 
@@ -106,7 +156,7 @@ class AddressBook{
     get getPhoneNumber() {
         return this.phoneNumber;
     }
-    set setphoneNumber(phoneNumber) {
+    set setPhoneNumber(phoneNumber) {
         let phoneNumberPattern = RegExp('^(0-9){10}');
         if(phoneNumberPattern.test(phoneNumber))
         this.phoneNumber = this.phoneNumber;
