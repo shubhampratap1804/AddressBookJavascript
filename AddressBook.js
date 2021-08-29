@@ -236,4 +236,10 @@ class AddressBook{
             }
         });
     }
+
+    countByCity(city) {
+        return contactList.filter(addressBook => addressBook.city == city).reduce((count,addressBook) => count += 1, 0);
+    }
+    countByState(state) {
+        return contactList.filter(addressBook  => addressBook .state == state).reduce((count,addressBook)=> count +=1, 0);
 }
