@@ -212,4 +212,18 @@ class AddressBook{
             console.log("Duplicate contact exists!")
         } else console.log("Duplicate contact doesn't exists!");
     }
+
+    searchByCityAndState(){
+        let city = prompt(`Enter city to search a person:`);
+        let state = prompt(`Enter state to search a person:`);
+        
+        array.forEach(AddressBook => {
+            if(contactList.getCity == city && contactList.getState == state){
+                console.log("City and state you have entered are: "+city + " and "+state);
+            }
+        });
+        contactList.filter(addressBook => addressBook.city == city)
+        contactList.filter(addressBook => addressBook.state == state)
+        contactList.forEach(addressBook => console.log(contactList));
+    }
 }
