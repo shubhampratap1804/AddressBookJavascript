@@ -22,99 +22,6 @@ class AddressBook{
     this.email = email;
     }
 
-   addContacts(){
-       let firstName = prompt(`Enter first name: `);
-       this.setFirstName(firstName);
-       let lastName = prompt(`Enter last name: `);
-       this.setLastName(lastName);
-       let address = prompt(`Enter address name: `);
-       this.setAddress(address);
-       let city = prompt(`Enter city name: `);
-       this.setCity(city);
-       let state = prompt(`Enter state name: `);
-       this.setState(state);
-       let zip = prompt(`Enter zip: `);
-       this.setZip(zip);
-       let phoneNumber = prompt(`Enter phone-number: `);
-       this.setphoneNumber(phoneNumber);
-       let email = prompt(`Enter email: `);
-       this.setEmail(email);
-
-       let addressBook = new AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email);
-       contactList.push(addressBook);
-       console.log(contactList);
-   }
-
-   addNewAddressBook(){
-       let newAddressBook = new AddressBook();
-       newAddressBook.addContacts();
-   }
-
-   editContacts(){
-        let firstName = prompt(`Enter first name of the existing contact`);
-        array.forEach(AddressBook => {
-            if(contactList.getFirstName() == firstName){
-                console.log("First name found, What you want to edit? ");
-                console.log("Enter 1 to edit first name: "+"\n Enter 2 to edit last name: "+"\n Enter 3 to edit address: "+
-                "\n Enter 4 to edit city name: "+"\n Enter 5 to edit state name: "+"\n Enter 6 to edit zip code: "+
-                "\n Enter 7 to edit phone number: "+"\n Enter 8 to edit email id: ");
-
-                let optionSelected = prompt(`Enter your choice: `);
-                switch(optionSelected){
-                    case 1:
-                        let firstName = prompt(`Enter new first name: `);
-                        this.setFirstName(firstName);
-                        break;
-                    case 2:
-                        let lastName = prompt(`Enter new last name: `);
-                        this.setLastName(lastName);
-                        break;
-                    case 3:
-                        let address = prompt(`"Enter new address: `);
-                        this.setAddress(address);
-                        break;
-                    case 4:
-                        let city = prompt(`Enter new city: `);
-                        this.setCity(city);
-                        break;
-                    case 5:
-                        let state = prompt(`Enter new state: `);
-                        this.setState(state);
-                        break;
-                    case 6:
-                        let zip = prompt(`Enter new zip code: `);
-                        this.setZip(zip);
-                        break;
-                    case 7:
-                        let phoneNumber = prompt(`Enter new phone number: `);
-                        this.setPhoneNumber(phoneNumber);
-                        break;
-                    case 8:
-                        let email = prompt(`Enter new email address: `);
-                        this.setEmail(email);
-                        break;                     
-                }
-            } else console.log("First name not found!");
-        });
-   }
-
-   deleteContact(){
-       let firstName = prompt(`Enter first name for deleting contact!`);
-       array.forEach(AddressBook => {
-           if(contactList.getFirstName == firstName){
-               contactList.splice(firstName,1);
-           } else console.log("First name not found!");
-       });
-   }
-
-   countNumberOfContacts(){
-       console.log("Number of people in contact list are: ");
-       let number = contactList.reduce((number) =>{
-           number+=1;
-           return number;
-       });
-       console("Number of people in contact list are: "+number);
-   }
     get getFirstName() { 
         return this.firstName; 
     }
@@ -203,5 +110,106 @@ class AddressBook{
         return "\nFirstName : " +this.firstName+ "\nLastName : " +this.lastName+ "\nAddress :" +this.address+ 
         "\nCity : " +this.city+ "\nState : " +this.state+ "\nZip : " +this.zip+ "\nPhoneNumber : " +this.phoneNumber+ 
         "\nemail : " +this.email;
+    }
+
+    addContacts(){
+        let firstName = prompt(`Enter first name: `);
+        this.setFirstName(firstName);
+        let lastName = prompt(`Enter last name: `);
+        this.setLastName(lastName);
+        let address = prompt(`Enter address name: `);
+        this.setAddress(address);
+        let city = prompt(`Enter city name: `);
+        this.setCity(city);
+        let state = prompt(`Enter state name: `);
+        this.setState(state);
+        let zip = prompt(`Enter zip: `);
+        this.setZip(zip);
+        let phoneNumber = prompt(`Enter phone-number: `);
+        this.setphoneNumber(phoneNumber);
+        let email = prompt(`Enter email: `);
+        this.setEmail(email);
+ 
+        let addressBook = new AddressBook(firstName,lastName,address,city,state,zip,phoneNumber,email);
+        contactList.push(addressBook);
+        console.log(contactList);
+    }
+ 
+    addNewAddressBook(){
+        let newAddressBook = new AddressBook();
+        newAddressBook.addContacts();
+    }
+ 
+    editContacts(){
+         let firstName = prompt(`Enter first name of the existing contact`);
+         array.forEach(AddressBook => {
+             if(contactList.getFirstName() == firstName){
+                 console.log("First name found, What you want to edit? ");
+                 console.log("Enter 1 to edit first name: "+"\n Enter 2 to edit last name: "+"\n Enter 3 to edit address: "+
+                 "\n Enter 4 to edit city name: "+"\n Enter 5 to edit state name: "+"\n Enter 6 to edit zip code: "+
+                 "\n Enter 7 to edit phone number: "+"\n Enter 8 to edit email id: ");
+ 
+                 let optionSelected = prompt(`Enter your choice: `);
+                 switch(optionSelected){
+                     case 1:
+                         let firstName = prompt(`Enter new first name: `);
+                         this.setFirstName(firstName);
+                         break;
+                     case 2:
+                         let lastName = prompt(`Enter new last name: `);
+                         this.setLastName(lastName);
+                         break;
+                     case 3:
+                         let address = prompt(`"Enter new address: `);
+                         this.setAddress(address);
+                         break;
+                     case 4:
+                         let city = prompt(`Enter new city: `);
+                         this.setCity(city);
+                         break;
+                     case 5:
+                         let state = prompt(`Enter new state: `);
+                         this.setState(state);
+                         break;
+                     case 6:
+                         let zip = prompt(`Enter new zip code: `);
+                         this.setZip(zip);
+                         break;
+                     case 7:
+                         let phoneNumber = prompt(`Enter new phone number: `);
+                         this.setPhoneNumber(phoneNumber);
+                         break;
+                     case 8:
+                         let email = prompt(`Enter new email address: `);
+                         this.setEmail(email);
+                         break;                     
+                 }
+             } else console.log("First name not found!");
+         });
+    }
+ 
+    deleteContact(){
+        let firstName = prompt(`Enter first name for deleting contact!`);
+        array.forEach(AddressBook => {
+            if(contactList.getFirstName == firstName){
+                contactList.splice(firstName,1);
+            } else console.log("First name not found!");
+        });
+    }
+
+    countNumberOfContacts(){
+        console.log("Number of people in contact list are: ");
+        let number = contactList.reduce((number) =>{
+            number+=1;
+            return number;
+        });
+        console("Number of people in contact list are: "+number);
+    }
+
+    duplicateContact(){
+        let firstName = prompt(`Enter first name of the person: `);
+        if(contactList.some(something => something.getFirstName == firstName)){
+            console.log("Duplicate contact exists!")
+        } else console.log("Duplicate contact doesn't exists!");
     }
 }
